@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {node, func} from 'prop-types';
-import {AppState, AsyncStorage} from 'react-native';
+import {AppState} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import SessionStatsContext from './context';
 import {STORAGE} from './constants';
