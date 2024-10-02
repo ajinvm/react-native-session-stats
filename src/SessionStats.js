@@ -25,11 +25,12 @@ export default class SessionStats extends Component {
   componentDidMount() {
     this.appState = AppState.currentState;
     this.handleSessionStart();
-    AppState.addEventListener('change', this.handleAppStateChange);
+    this.appstateSubscription = AppState.addEventListener('change', this.handleAppStateChange);
   }
 
   componentWillUnmount() {
-    AppState.removeEventListener('change', this.handleAppStateChange);
+    //AppState.removeEventListener('change', this.handleAppStateChange);
+    this.appstateSubscription.remove()
   }
 
   handleSessionStart = () => {
